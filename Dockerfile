@@ -48,12 +48,12 @@ ENV DERP_VERIFY_CLIENTS=false
 COPY --from=builder /app/derper /app/derper
 
 # ===== 你的容器启动命令也完整保留在这里 =====
-CMD /app/derper \
-   --hostname=$DERP_DOMAIN  \
-   --certmode=$DERP_CERT_MODE \
-   --certdir=$DERP_CERT_DIR \
-   --a=$DERP_ADDR \
-   --stun=$DERP_STUN  \
-   --stun-port=$DERP_STUN_PORT \
-   --http-port=-1 \
-   --verify-clients=$DERP_VERIFY_CLIENTS
+CMD ["/app/derper", \
+   "--hostname=$DERP_DOMAIN", \
+   "--certmode=$DERP_CERT_MODE", \
+   "--certdir=$DERP_CERT_DIR", \
+   "--a=$DERP_ADDR", \
+   "--stun=$DERP_STUN", \
+   "--stun-port=$DERP_STUN_PORT", \
+   "--http-port=-1", \
+   "--verify-clients=$DERP_VERIFY_CLIENTS"]
