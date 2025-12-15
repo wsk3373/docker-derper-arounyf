@@ -9,6 +9,6 @@ services:
       - /var/run/tailscale/:/var/run/tailscale/
     environment:
       DERP_CERT_MODE: manual
-      DERP_ADDR: :12340
+      DERP_ADDR: :4443
       DERP_DOMAIN: runyf.cn
       DERP_VERIFY_CLIENTS: true
